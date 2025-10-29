@@ -1,0 +1,28 @@
+There are two Methonds for calling API
+
+1) Fetch
+   JS BuiltIn Feature for getting data through API 
+	syntax: 
+		async function getdata(){
+		const responce = await fetch("http://jsonxyz......")
+		console.log(responce)
+	 	}
+	getdata();
+
+
+2) Axios 
+   Axios is an External 3rd Party Library For Fetching API in React
+	install First Using npm
+
+	1). npm : npm i axios
+
+	2). then import axios on the top
+	
+	syntax:
+		const getdata = async()=>{
+
+ 		const responce =await axios.get("http://jsonxyz......")
+		console.log(responce)
+		console.log(responce.data)
+	}
+	getdata();	
