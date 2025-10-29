@@ -17,6 +17,7 @@ There are two Methonds for calling API
 	1). npm : npm i axios
 
 	2). then import axios on the top
+		imprt axios fro 'axios'
 	
 	syntax:
 		const getdata = async()=>{
@@ -26,3 +27,30 @@ There are two Methonds for calling API
 		console.log(responce.data)
 	}
 	getdata();	
+
+########################################################
+
+How to use API DATA
+
+1) first nitilize a usestate and Set the iital Value Empy String
+2) hen save the API responce in the setState of usestate like i intilie a use state 
+	const [data, setData]= usestate([])
+	setData(responce.data)
+
+
+#################################################################
+
+useEffect Hook
+use effect hook is for when we want to play side effect in our project like  when the conten was load then connect with database This work will done with useffect.
+another example like when the notificaion counticrase the show a alert, Modal, Toaster 
+
+Syntax
+import {useEffect} from 'react' 
+always write on the top of the component
+
+
+
+
+##################################################################
+
+	

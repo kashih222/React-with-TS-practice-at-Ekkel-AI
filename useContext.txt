@@ -1,0 +1,15 @@
+Basically useContext is used for centralized the data everyone can use this data and avoid the un-necesory props drilling.
+
+steps:
+	1st) Firt Create the Context file Like themeContext.jsx/tsx
+	2nd) wrap the context file on app.jsx/tsx
+	3rd) pass the props props.children in the context file otherwise remaing components may not be visible
+	4rt) now create the context
+		createContext() and save this into a veriable like const ThemeContext = createContext()
+	5th) Now export this context for everyone can import this context easily.
+		export const ThemeContext = createContext()
+	6th) then Wrap the childrens in context file with contextfilename.provider
+		<ThemeContext.Provider>
+		     {props.children}
+		<ThemeContext.Provider/>
+	7th) then where we need the data  import this context and use the data placed in Context file
