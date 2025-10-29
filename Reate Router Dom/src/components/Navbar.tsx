@@ -4,7 +4,7 @@ const Navbar = () => {
   return (
     <div className='flex items-center justify-between px-4 py-4 bg-purple-600'>
         <div className='font-bold text-2xl'>
-            LOGO
+            <Link to='/'>KASHIH.</Link>
         </div>
         <div>
             <ul className='flex items-center justify-center gap-8 font-bold border border-1 border-white px-10 py-3 rounded-2xl '>
