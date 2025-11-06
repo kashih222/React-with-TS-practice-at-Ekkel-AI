@@ -2,6 +2,12 @@ Basically useContext is used for centralized the data everyone can use this data
 
 steps:
 	1st) Firt Create the Context file Like themeContext.jsx/tsx
+		a) import React from React
+		b) const usercontext = react.createContext()
+		c) export default userContext;
+
+
+
 	2nd) wrap the context file on app.jsx/tsx
 	3rd) pass the props props.children in the context file otherwise remaing components may not be visible
 	4rt) now create the context
@@ -13,3 +19,19 @@ steps:
 		     {props.children}
 		<ThemeContext.Provider/>
 	7th) then where we need the data  import this context and use the data placed in Context file
+
+###########################
+
+1) import react from react 
+2) import usercontext from ../components;
+
+	const UserContextProvider = (children)=>{
+		const [value , setValue] = useState();
+		
+		return(
+			<usercontext.provider value ={{value , setValue}}>
+				{children}
+			</usercontext.provider>
+		)
+	}
+	export default userContextProvider
