@@ -4,7 +4,7 @@ const User = require('../Model/User');
 const { body, validationResult } = require('express-validator');
 const bcrypt = require('bcrypt');
 const jwt = require('jsonwebtoken');
-const fetchuser = require('../Middleware/fetchuser')
+// const fetchuser = require('../Middleware/fetchuser')
 const JWT_SECRET = "yourSuperSecretKey";
 
 // Create user
