@@ -1,5 +1,5 @@
 import Navbar from "./components/Navbar"
-import NewsPage from "./components/NewsPage"
+import NewsCard from "./components/NewsCard"
 
 
 
@@ -8,7 +8,7 @@ function App() {
   return (
     <>
       <Navbar />
-      <NewsPage/>
+      <NewsCard/>
     </>
   )
 }
