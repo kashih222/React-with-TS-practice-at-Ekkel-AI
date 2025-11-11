@@ -4,7 +4,10 @@
   "description": "here i am writing the code of backend part of this app",
   "main": "Index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "react-scripts start",
+    "build": "react-scripts build",
+    "eject": "react-scripts eject"
   },
   "author": "",
   "license": "ISC",
@@ -16,5 +19,8 @@
     "jsonwebtoken": "^9.0.2",
     "mongoose": "^8.19.3",
     "nodemon": "^3.1.10"
+  },
+  "devDependencies": {
+    "concurrently": "^9.2.1"
   }
 }

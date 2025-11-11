@@ -1,30 +1,21 @@
-
-
-import './App.css'
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import Navbar from "./components/Navbar";
+import Login from "./components/Login";
+import Signup from "./components/Signup";
+import Notes from "./components/Notes"; // You’ll make this next
 
 function App() {
- 
-
   return (
-    <>
-       <div className="container mt-5">
-      <h1 className="text-center text-primary mb-4">Hello Bootstrap in React 🚀</h1>
-
-      <button className="btn btn-success">Click Me</button>
-
-      <div className="progress mt-3">
-        <div
-          className="progress-bar progress-bar-striped bg-info"
-          role="progressbar"
-          style={{ width: "60%" }}
-          aria-valuenow={60}
-          aria-valuemin={0}
-          aria-valuemax={100}
-        ></div>
-      </div>
-    </div>
-    </>
-  )
+    <Router>
+      <Navbar />
+      <Routes>
+        <Route path="/" element={<h2 className="text-center mt-5">Welcome to My iNoteBook  📝</h2>} />
+        <Route path="/login" element={<Login />} />
+        <Route path="/signup" element={<Signup />} />
+        <Route path="/notes" element={<Notes />} />
+      </Routes>
+    </Router>
+  );
 }
 
-export default App
+export default App;
