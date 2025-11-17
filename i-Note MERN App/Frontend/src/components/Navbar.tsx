@@ -1,10 +1,12 @@
 import { Link } from "react-router-dom";
+
 import "bootstrap/dist/css/bootstrap.min.css";
 
+
 const Navbar = () => {
- 
-
-
+  
+  
+  
   return (
     <nav className="navbar navbar-expand-lg navbar-dark bg-dark shadow-sm py-3">
       <div className="container">
@@ -26,22 +28,7 @@ const Navbar = () => {
 
         <div className="collapse navbar-collapse justify-content-end" id="navbarNav">
           <ul className="navbar-nav align-items-center">
-            <li className="nav-item mx-2">
-              <Link className="nav-link text-white" to="/">
-                Home
-              </Link>
-            </li>
-
-            
-              <li className="nav-item mx-2">
-                <Link className="nav-link text-white" to="/notes">
-                  My Notes
-                </Link>
-              </li>
-            
-
-           
-              <>
+             <>
                 <li className="nav-item mx-2">
                   <Link className="btn btn-outline-light px-3" to="/login">
                     Login

@@ -1,15 +1,15 @@
 import { StrictMode } from "react";
 import { createRoot } from "react-dom/client";
-import "bootstrap/dist/css/bootstrap.min.css";
-import "bootstrap/dist/js/bootstrap.bundle.min.js";
 import "./index.css";
 import App from "./App.tsx";
-import NoteProvider from "./Context/NoteProvider.tsx"; 
+import { ToastContainer } from "react-toastify";
+import StateContext from "./Context/StateContext.js";
 
 createRoot(document.getElementById("root")!).render(
   <StrictMode>
-    <NoteProvider>  
+    <StateContext>
       <App />
-    </NoteProvider>
+    </StateContext>
+    <ToastContainer />
   </StrictMode>
 );
