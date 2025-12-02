@@ -14,7 +14,7 @@ const NoteProvider = ({ children }: { children: React.ReactNode }) => {
   const addNote = async (
     title: string,
     description: string,
-    tag: string
+    tag: string,
   ): Promise<void> => {
     const response = await fetch(`${host}/api/note/addnote`, {
       method: "POST",
@@ -77,6 +77,8 @@ const NoteProvider = ({ children }: { children: React.ReactNode }) => {
     setNotes((prev) => prev.filter((note) => note._id !== id));
   };
 
+
+  // GET ALL NOTES
   const handleGet = async (): Promise<void> => {
     
     const responce = await fetch(`${host}/api/note/fetchallnotes`, {
@@ -86,10 +88,10 @@ const NoteProvider = ({ children }: { children: React.ReactNode }) => {
         "auth-token": authToken,
       },
     });
+    
     const allNotes = await responce.json();
+    console.log(allNotes)
     setNotes(allNotes);
-
-
   };
 
   return (

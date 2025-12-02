@@ -2,6 +2,9 @@
 import { createContext } from "react";
 
 export interface INote {
+  date: string;
+  createdAt: string;
+  updatedAt: string;
   _id: string ;
   title: string;
   description: string;

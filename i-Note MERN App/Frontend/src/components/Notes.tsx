@@ -11,18 +11,16 @@ const Notes = () => {
   // EDIT MODAL STATES
   const [showModal, setShowModal] = useState(false);
   const [currentId, setCurrentId] = useState<string>("");
+
   useEffect(() => {
-    handleGet(); 
-  })
+    handleGet();
+  }, []);
 
   if (!context) {
     return <p>Loading context...</p>;
   }
 
   const { notes, addNote, handleDelete, handleUpdate, handleGet } = context;
-
-  
-  
 
   // ADD NOTE
   async function submitHandler(e: React.FormEvent<HTMLFormElement>) {
@@ -58,11 +56,11 @@ const Notes = () => {
 
     await handleUpdate(currentId, title, description, tag);
     setShowModal(false);
+    handleGet();
   };
 
   return (
     <div className="container mt-5">
-
       {/* ADD NOTE */}
       <div className="card shadow-sm border-0 mb-5 p-4 bg-light">
         <h5 className="mb-3 text-dark">Add a New Note</h5>
@@ -106,21 +104,48 @@ const Notes = () => {
           <div key={note._id} className="col-md-4 mb-4">
             <div className="card border-dark shadow-sm h-100">
               <div className="card-body">
-                <h5 className="card-title fw-bold text-dark">{note.title}</h5>
+                <div className="d-flex justify-content-between align-items-center">
+                  <h5 className="card-title fw-bold text-dark font">
+                    {note.title}
+                  </h5>
+                  <span className="fw-bold">
+                    {new Date(note.createdAt).getFullYear() +
+                      "-" +
+                      String(new Date(note.createdAt).getMonth() + 1).padStart(
+                        2,
+                        "0"
+                      ) +
+                      "-" +
+                      String(new Date(note.createdAt).getDate()).padStart(
+                        2,
+                        "0"
+                      ) +
+                      " " +
+                      String(new Date(note.createdAt).getHours()).padStart(
+                        2,
+                        "0"
+                      ) +
+                      ":" +
+                      String(new Date(note.createdAt).getMinutes()).padStart(
+                        2,
+                        "0"
+                      )}
+                  </span>
+                </div>
                 <p className="card-text text-muted">{note.description}</p>
                 {note.tag && <span className="badge bg-dark">{note.tag}</span>}
               </div>
 
               <div className="card-footer bg-transparent border-0 d-flex justify-content-between">
                 <button
-                  className="btn btn-outline-dark btn-sm"
+                  className="btn btn-outline-dark btn-sm w-25 "
                   onClick={() => openEditModal(note)}
                 >
                   Edit
                 </button>
 
                 <button
-                  className="btn btn-outline-danger btn-sm"
+                  className="btn btn-outline-danger btn-sm w-25"
                   onClick={() => handleDelete(note._id)}
                 >
                   Delete
@@ -134,12 +159,11 @@ const Notes = () => {
       {/* EDIT MODAL */}
       {showModal && (
         <div
-          className="modal fade show d-block"
+          className="modal fade show d-block h-100 w-100 d-flex align-items-center justify-content-center"
           style={{ background: "rgba(0,0,0,0.5)", zIndex: 9999 }}
         >
-          <div className="modal-dialog">
+          <div className="modal-dialog w-50">
             <div className="modal-content">
-
               <div className="modal-header">
                 <h5 className="modal-title">Edit Note</h5>
                 <button
@@ -184,7 +208,6 @@ const Notes = () => {
                   Save Changes
                 </button>
               </div>
-
             </div>
           </div>
         </div>

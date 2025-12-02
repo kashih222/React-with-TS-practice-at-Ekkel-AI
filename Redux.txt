@@ -1,0 +1,8 @@
+step1 : Configure Store
+step2 : Wrape Store Provider to main
+step3 : create slice
+step4 : create reducers in slice
+step5 : create actions in reducer
+step6 : call reducers in store
+step7 : use the stor values where we need byUsing useSelector hook
+step8 : save the value by using useDispatch or Dispatch

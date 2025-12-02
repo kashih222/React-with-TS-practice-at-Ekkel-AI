@@ -41,6 +41,7 @@ router.post(
 router.get('/fetchallnotes', fetchuser, async (req, res) => {
   try {
     const notes = await Note.find({ user: req.user.id });
+    console.log("Fetched notes:", notes);
     res.json(notes);
   } catch (error) {
     console.error("Fetch notes failed:", error);
